@@ -1,9 +1,9 @@
 <?php
 /**
- * Business Pro Theme.
+ * YCB Theme.
  *
- * @package   Business Pro
- * @link      https://seothemes.com/themes/business-pro
+ * @package   YCB
+ * @link      https://seothemes.com/themes/ycb
  * @author    Seo Themes
  * @copyright Copyright © 2017 Seo Themes
  * @license   GPL-2.0+
@@ -13,12 +13,12 @@
 include_once( get_template_directory() . '/lib/init.php' );
 
 // Define theme constants.
-define( 'CHILD_THEME_NAME', 'Business Pro' );
-define( 'CHILD_THEME_URL', 'https://seothemes.com/themes/business-pro' );
+define( 'CHILD_THEME_NAME', 'YCB' );
+define( 'CHILD_THEME_URL', 'https://ycb.vn' );
 define( 'CHILD_THEME_VERSION', '1.0.0' );
 
 // Set Localization (do not remove).
-load_child_theme_textdomain( 'business-pro', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'business-pro' ) );
+load_child_theme_textdomain( 'ycb', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'ycb' ) );
 
 // Remove unused sidebars and layouts.
 unregister_sidebar( 'sidebar-alt' );
@@ -93,7 +93,7 @@ add_theme_support( 'genesis-accessibility', array(
 
 // Enable custom navigation menus.
 add_theme_support( 'genesis-menus' , array(
-	'primary' => __( 'Header Menu', 'business-pro' ),
+	'primary' => __( 'Header Menu', 'ycb' ),
 ) );
 
 // Enable support for footer widgets.
@@ -172,53 +172,53 @@ register_default_headers( array(
 	'child' => array(
 		'url'           => '%2$s/assets/images/hero.jpg',
 		'thumbnail_url' => '%2$s/assets/images/hero.jpg',
-		'description'   => __( 'Hero Image', 'business-pro' ),
+		'description'   => __( 'Hero Image', 'ycb' ),
 	),
 ) );
 
 // Register custom layout.
 genesis_register_layout( 'centered-content', array(
-	'label' => __( 'Centered Content', 'business-pro' ),
+	'label' => __( 'Centered Content', 'ycb' ),
 	'img'   => get_stylesheet_directory_uri() . '/assets/images/layout.gif',
 ) );
 
 // Register front page widget areas.
 genesis_register_sidebar( array(
 	'id'          => 'front-page-1',
-	'name'        => __( 'Front Page 1', 'business-pro' ),
-	'description' => __( 'This is the Front Page 1 widget area.', 'business-pro' ),
+	'name'        => __( 'Front Page 1', 'ycb' ),
+	'description' => __( 'This is the Front Page 1 widget area.', 'ycb' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-2',
-	'name'        => __( 'Front Page 2', 'business-pro' ),
-	'description' => __( 'This is the Front Page 2 widget area.', 'business-pro' ),
+	'name'        => __( 'Front Page 2', 'ycb' ),
+	'description' => __( 'This is the Front Page 2 widget area.', 'ycb' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-3',
-	'name'        => __( 'Front Page 3', 'business-pro' ),
-	'description' => __( 'This is the Front Page 3 widget area.', 'business-pro' ),
+	'name'        => __( 'Front Page 3', 'ycb' ),
+	'description' => __( 'This is the Front Page 3 widget area.', 'ycb' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-4',
-	'name'        => __( 'Front Page 4', 'business-pro' ),
-	'description' => __( 'This is the Front Page 4 widget area.', 'business-pro' ),
+	'name'        => __( 'Front Page 4', 'ycb' ),
+	'description' => __( 'This is the Front Page 4 widget area.', 'ycb' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-5',
-	'name'        => __( 'Front Page 5', 'business-pro' ),
-	'description' => __( 'This is the Front Page 5 widget area.', 'business-pro' ),
+	'name'        => __( 'Front Page 5', 'ycb' ),
+	'description' => __( 'This is the Front Page 5 widget area.', 'ycb' ),
 ) );
 genesis_register_sidebar( array(
 	'id'          => 'front-page-6',
-	'name'        => __( 'Front Page 6', 'business-pro' ),
-	'description' => __( 'This is the Front Page 6 widget area.', 'business-pro' ),
+	'name'        => __( 'Front Page 6', 'ycb' ),
+	'description' => __( 'This is the Front Page 6 widget area.', 'ycb' ),
 ) );
 
 // Register before footer widget area.
 genesis_register_sidebar( array(
 	'id'          => 'before-footer',
-	'name'        => __( 'Before Footer', 'business-pro' ),
-	'description' => __( 'This is the before footer widget area.', 'business-pro' ),
+	'name'        => __( 'Before Footer', 'ycb' ),
+	'description' => __( 'This is the before footer widget area.', 'ycb' ),
 ) );
 
 add_action( 'genesis_footer', 'business_before_footer_widget_area', 5 );
@@ -261,15 +261,15 @@ function business_scripts_styles() {
 	}
 
 	// Enqueue theme scripts.
-	wp_enqueue_script( 'business-pro', get_stylesheet_directory_uri() . '/assets/scripts/min/business-pro.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'ycb', get_stylesheet_directory_uri() . '/assets/scripts/min/ycb.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Enqueue responsive menu script.
 	wp_enqueue_script( 'business-menu', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Localize responsive menus script.
 	wp_localize_script( 'business-menu', 'genesis_responsive_menu', array(
-		'mainMenu'         => __( 'Menu', 'business-pro' ),
-		'subMenu'          => __( 'Menu', 'business-pro' ),
+		'mainMenu'         => __( 'Menu', 'ycb' ),
+		'subMenu'          => __( 'Menu', 'ycb' ),
 		'menuIconClass'    => null,
 		'subMenuIconClass' => null,
 		'menuClasses'      => array(
