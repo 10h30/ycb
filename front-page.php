@@ -13,6 +13,8 @@
 // Force full-width-content layout.
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
 
+get_template_part( 'template', 'full' );
+
 // Remove default page header.
 remove_action( 'genesis_after_header', 'business_page_header_open', 20 );
 remove_action( 'genesis_after_header', 'business_page_header_title', 24 );
