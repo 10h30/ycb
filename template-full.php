@@ -2,6 +2,12 @@
 // Template Name: Full Width Page
 
 add_filter( 'genesis_attr_site-inner', 'be_site_inner_attr' );
+
+// Remove default page header.
+remove_action( 'genesis_after_header', 'business_page_header_open', 20 );
+remove_action( 'genesis_after_header', 'business_page_header_title', 24 );
+remove_action( 'genesis_after_header', 'business_page_header_close', 28 );
+
 /**
  * Add the attributes from 'entry', since this replaces the main entry.
  *
