@@ -327,8 +327,8 @@ li {
 hr {
 	border: 0;
 	border-collapse: collapse;
-	border-bottom: 2px solid #f0f1f2;
-	border-bottom: .2rem solid #f0f1f2;
+	border-bottom: 1px solid #d8d8d8;
+	border-bottom: .1rem solid #d8d8d8;
 	clear: both;
 	padding: 1em 0 0;
 	margin: 0 0 2em
@@ -380,8 +380,8 @@ input,
 select,
 textarea {
 	background-color: #fff;
-	border: 2px solid #f0f1f2;
-	border: .2rem solid #f0f1f2;
+	border: 1px solid #d8d8d8;
+	border: .1rem solid #d8d8d8;
 	border-radius: .4rem;
 	padding: .5em 1em;
 	width: 100%;
@@ -396,8 +396,8 @@ textarea:focus {
 	border-color: #567
 }
 :focus {
-	outline: 2px solid #f0f1f2;
-	outline: .2rem solid #f0f1f2
+	outline: 1px solid #d8d8d8;
+	outline: .1rem solid #d8d8d8
 }
 input[type=checkbox],
 input[type=image],
@@ -523,8 +523,8 @@ video {
 }
 table {
 	background-color: #fff;
-	border: 2px solid #f0f1f2;
-	border: .2rem solid #f0f1f2;
+	border: 1px solid #d8d8d8;
+	border: .1rem solid #d8d8d8;
 	border-collapse: collapse;
 	border-spacing: 0;
 	line-height: 1;
@@ -533,17 +533,17 @@ table {
 	width: 100%
 }
 tbody {
-	border-bottom: 2px solid #f0f1f2;
-	border-bottom: .2rem solid #f0f1f2
+	border-bottom: 1px solid #d8d8d8;
+	border-bottom: .1rem solid #d8d8d8
 }
 td,
 th {
 	text-align: left;
 	padding: .618em;
-	border-top: 2px solid #f0f1f2;
-	border-top: .2rem solid #f0f1f2;
-	border-right: 2px solid #f0f1f2;
-	border-right: .2rem solid #f0f1f2
+	border-top: 1px solid #d8d8d8;
+	border-top: .1rem solid #d8d8d8;
+	border-right: 1px solid #d8d8d8;
+	border-right: .1rem solid #d8d8d8
 }
 .screen-reader-shortcut,
 .screen-reader-text,
@@ -617,10 +617,10 @@ th {
 }
 .page-builder .content-sidebar-wrap {
 	padding: 0;
-	border-top: 2px solid #f0f1f2;
-	border-top: .2rem solid #f0f1f2;
-	border-bottom: 2px solid #f0f1f2;
-	border-bottom: .2rem solid #f0f1f2
+	border-top: 1px solid #d8d8d8;
+	border-top: .1rem solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+	border-bottom: .1rem solid #d8d8d8
 }
 .gallery,
 .gallery-row {
@@ -1047,7 +1047,7 @@ img.alignright {
 	text-decoration: none;
 	display: inline-block;
 	padding: .5em 0;
-	color: #f0f1f2
+	color: #d8d8d8
 }
 .menu-item a:focus {
 	outline: 0
@@ -1103,10 +1103,10 @@ img.alignright {
 	margin: auto;
 	padding: 5vw;
 	background-color: rgba(20,30,40,.98);
-	border-top: 2px solid #f0f1f2;
-	border-top: .2rem solid #f0f1f2;
-	border-bottom: 2px solid #f0f1f2;
-	border-bottom: .2rem solid #f0f1f2;
+	border-top: 1px solid #d8d8d8;
+	border-top: .1rem solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+	border-bottom: .1rem solid #d8d8d8;
 	position: fixed;
 	overflow: auto;
 	overflow-x: visible;
@@ -1326,8 +1326,8 @@ img.alignright {
 	display: block;
 	padding: 10px 20px;
 	padding: 1rem 2rem;
-	border: 2px solid #f0f1f2;
-	border: .2rem solid #f0f1f2;
+	border: 1px solid #d8d8d8;
+	border: .1rem solid #d8d8d8;
 	margin-top: 1em;
 	border-radius: .4rem
 }
@@ -1583,7 +1583,7 @@ p.entry-meta {
 	text-decoration: none
 }
 .site-footer a:hover {
-	color: #f0f1f2
+	color: #d8d8d8
 }
 .site-footer .back-to-top {
 	position: absolute;
@@ -1651,7 +1651,7 @@ p.entry-meta {
 	font-size: 16px;
 	font-size: 1.6rem;
 	margin-bottom: 1.5em;
-	color: #f0f1f2
+	color: #d8d8d8
 }
 .footer-widgets .menu-item {
 	width: 50%;
@@ -1672,7 +1672,7 @@ p.entry-meta {
 }
 .footer-widgets .menu-item a:hover,
 .footer-widgets .menu-item.current-menu-item > a {
-	color: #f0f1f2
+	color: #d8d8d8
 }
 .footer-widgets .sub-menu {
 	display: none!important
@@ -1932,7 +1932,7 @@ div.lSSlideOuter ul.testimonials-list li {
 	text-align: center
 }
 .hero-section .bp-contact-card a {
-	color: #f0f1f2;
+	color: #d8d8d8;
 	text-decoration: none
 }
 .bp-contact-card .bp-booking,
@@ -1971,7 +1971,11 @@ div.lSSlideOuter ul.testimonials-list li {
 	content: "\f18f"
 }
 .products .iconic-was-swatches {
-	margin-bottom: 0!important
+	margin-bottom: 0!important;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1 1 100%;
+	-ms-flex: 1 1 100%;
+	flex: 1 1 100%
 }
 .products .iconic-was-swatches li {
 	margin-right: 5px
@@ -2055,7 +2059,7 @@ a.iconic-was-swatch:hover {
 	z-index: 2
 }
 .front-page-1 .widget .widget-wrap p {
-	color: #f0f1f2;
+	color: #d8d8d8;
 	margin-bottom: 1.618em
 }
 .front-page-2 {
@@ -3387,7 +3391,7 @@ a.iconic-was-swatch:hover {
 	}
 	blockquote,
 	pre {
-		border: .2rem solid #f0f1f2;
+		border: .1rem solid #d8d8d8;
 		page-break-inside: avoid
 	}
 	.content,
