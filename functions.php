@@ -375,3 +375,34 @@ function sk_custom_logo() {
         );
     return $html;
 }
+
+//* Register webshop sidebar
+genesis_register_sidebar( array(
+    'id'            => 'woocommerce-sidebar',
+    'name'          => __( 'Woocommerce Sidebar', 'ycb' ),
+    'description' => __( 'This is the WooCommerce sidebar', 'ycb' ),
+) );
+
+//Remove default sidebar and add Woocommerce sidebar
+function themeprefix_remove_default_sidebar() {
+	 if( 'product' == get_post_type() ) {//set which pages
+		 remove_action( 'genesis_sidebar', 'ss_do_sidebar' );
+		 remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+		 add_action( 'genesis_sidebar', 'themeprefix_add_woo_sidebar' );
+	 }
+ }
+ 
+ //Alternative Sidebar 
+function themeprefix_add_woo_sidebar() { 
+	dynamic_sidebar( 'woocommerce-sidebar' ); //add in the sidebar name
+}
+ 
+add_action( 'genesis_before_sidebar_widget_area', 'themeprefix_remove_default_sidebar' ); //sets the ball rolling
+
+//Sidebar-Content Layout on WooCommerce
+function themeprefix_cpt_layout() {
+ if( is_shop() || is_tax( 'product_cat' ) || is_tax( 'product_tag' ) || is_tax('yith_product_brand') ) {
+	return 'sidebar-content';
+ }
+}
+add_filter( 'genesis_site_layout', 'themeprefix_cpt_layout' );
