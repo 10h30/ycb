@@ -203,7 +203,8 @@ function business_scripts_styles() {
 	wp_dequeue_style( 'simple-social-icons-font' );
 
 	// Enqueue Google fonts.
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Montserrat:600|Hind:400', array(), CHILD_THEME_VERSION );
+	//wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Montserrat:600|Hind:400', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,500&amp;subset=latin-ext,vietnamese', array(), CHILD_THEME_VERSION );
 
 	// Enqueue Line Awesome icon font.
 	wp_enqueue_style( 'line-awesome', '//maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css', array(), CHILD_THEME_VERSION );
