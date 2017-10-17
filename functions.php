@@ -141,30 +141,15 @@ add_theme_support( 'custom-background', array(
 	'default-color' => 'f4f5f6',
 ) );
 
-// Enable logo option in Customizer > Site Identity.
-add_theme_support( 'custom-logo', array(
-	'height'      => 100,
-	'width'       => 300,
-	'flex-height' => true,
-	'flex-width'  => true,
-	'header-text' => array( '.site-title', '.site-description' ),
-) );
-
 // Display custom logo.
 add_action( 'genesis_site_title', 'the_custom_logo', 1 );
 
-// Enable support for custom header image or video.
-add_theme_support( 'custom-header', array(
-	'header-selector'    => 'false',
-	'default_image'      => get_stylesheet_directory_uri() . '/assets/images/hero.jpg',
-	'header-text'        => true,
-	'default-text-color' => 'ffffff',
-	'width'              => 1920,
-	'height'             => 1080,
-	'flex-height'        => true,
-	'flex-width'         => true,
-	'uploads'            => true,
-	'video'              => true,
+// Add support for custom logo.
+add_theme_support( 'custom-logo', array(
+	'width'       => 600,
+	'height'      => 160,
+	'flex-width' => true,
+	'flex-height' => true,
 ) );
 
 // Register default header (just in case).
@@ -180,38 +165,6 @@ register_default_headers( array(
 genesis_register_layout( 'centered-content', array(
 	'label' => __( 'Centered Content', 'ycb' ),
 	'img'   => get_stylesheet_directory_uri() . '/assets/images/layout.gif',
-) );
-
-// Register front page widget areas.
-genesis_register_sidebar( array(
-	'id'          => 'front-page-1',
-	'name'        => __( 'Front Page 1', 'ycb' ),
-	'description' => __( 'This is the Front Page 1 widget area.', 'ycb' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-2',
-	'name'        => __( 'Front Page 2', 'ycb' ),
-	'description' => __( 'This is the Front Page 2 widget area.', 'ycb' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-3',
-	'name'        => __( 'Front Page 3', 'ycb' ),
-	'description' => __( 'This is the Front Page 3 widget area.', 'ycb' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-4',
-	'name'        => __( 'Front Page 4', 'ycb' ),
-	'description' => __( 'This is the Front Page 4 widget area.', 'ycb' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-5',
-	'name'        => __( 'Front Page 5', 'ycb' ),
-	'description' => __( 'This is the Front Page 5 widget area.', 'ycb' ),
-) );
-genesis_register_sidebar( array(
-	'id'          => 'front-page-6',
-	'name'        => __( 'Front Page 6', 'ycb' ),
-	'description' => __( 'This is the Front Page 6 widget area.', 'ycb' ),
 ) );
 
 // Register before footer widget area.
@@ -333,4 +286,90 @@ function ycb_do_header() {
 			'xhtml' => '</div>',
 		) );
 
+}
+
+// Remove default stylesheet.
+wp_deregister_style( 'ycb' );
+wp_dequeue_style( 'ycb' );
+
+// Load minified child theme stylesheet.
+wp_register_style( 'ycb', get_stylesheet_directory_uri() . '/assets/styles/min/style.min.css', array(), CHILD_THEME_VERSION );
+wp_enqueue_style( 'ycb' );
+
+//Load custom css
+wp_register_style( 'ycb-custom', get_stylesheet_directory_uri() . 'custom.css', array(), CHILD_THEME_VERSION );
+wp_enqueue_style( 'ycb-custom' );
+
+add_filter( 'genesis_seo_title', 'custom_header_inline_logo', 10, 3 );
+/**
+ * Add an image inline in the site title element for the logo
+ *
+ * @param string $title Current markup of title.
+ * @param string $inside Markup inside the title.
+ * @param string $wrap Wrapping element for the title.
+ *
+ * @author @_AlphaBlossom
+ * @author @_neilgee
+ * @author @_JiveDig
+ * @author @_srikat
+ */
+function custom_header_inline_logo( $title, $inside, $wrap ) {
+	// If the custom logo function and custom logo exist, set the logo image element inside the wrapping tags.
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		$inside = sprintf( '<span class="screen-reader-text">%s</span>%s', esc_html( get_bloginfo( 'name' ) ), get_custom_logo() );
+	} else {
+		// If no custom logo, wrap around the site name.
+		$inside	= sprintf( '<a href="%s">%s</a>', trailingslashit( home_url() ), esc_html( get_bloginfo( 'name' ) ) );
+	}
+
+	// Build the title.
+	$title = genesis_markup( array(
+		'open'    => sprintf( "<{$wrap} %s>", genesis_attr( 'site-title' ) ),
+		'close'   => "</{$wrap}>",
+		'content' => $inside,
+		'context' => 'site-title',
+		'echo'    => false,
+		'params'  => array(
+			'wrap' => $wrap,
+		),
+	) );
+
+	return $title;
+}
+
+add_filter( 'genesis_attr_site-description', 'custom_add_site_description_class' );
+/**
+ * Add class for screen readers to site description.
+ * This will keep the site description markup but will not have any visual presence on the page
+ * This runs if there is a logo image set in the Customizer.
+ *
+ * @param array $attributes Current attributes.
+ *
+ * @author @_neilgee
+ * @author @_srikat
+ */
+function custom_add_site_description_class( $attributes ) {
+	if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+		$attributes['class'] .= ' screen-reader-text';
+	}
+
+	return $attributes;
+}
+
+add_filter( 'get_custom_logo', 'sk_custom_logo' );
+/**
+ * Filter the output of logo to add a custom class for the img element.
+ *
+ * @return string Custom logo markup.
+ */
+function sk_custom_logo() {
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $html = sprintf( '<a href="%1$s" class="custom-logo-link" rel="home" itemprop="url">%2$s</a>',
+            esc_url( home_url( '/' ) ),
+            wp_get_attachment_image( $custom_logo_id, 'full', false, array(
+                'class'    => 'custom-logo style-svg',
+                'itemprop' => 'logo',
+            ) )
+        );
+    return $html;
 }

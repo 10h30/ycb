@@ -342,18 +342,18 @@ gulp.task( 'publish', function() {
  */
 gulp.task( 'watch', function() {
 
-	/** HTTPS.
+	//HTTPS.
 	browsersync( {
-		proxy: 'https://business.dev',
+		proxy: 'https://ycb.test',
 		port: 8000,
 		notify: false,
 		open: false,
 		https: {
-			"key": "/Users/seothemes/.valet/Certificates/business.dev.key",
-			"cert": "/Users/seothemes/.valet/Certificates/business.dev.crt"
+			"key": "/Users/thuanbui/.valet/Certificates/ycb.test.key",
+			"cert": "/Users/thuanbui/.valet/Certificates/ycb.test.crt"
 		}
 	} );
-	*/
+	
 
 	/**
 	 * Non-HTTPS browsersync.
