@@ -210,7 +210,8 @@ function business_scripts_styles() {
 	wp_enqueue_style( 'line-awesome', '//maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css', array(), CHILD_THEME_VERSION );
 
 	// Enqueue WooCommerce styles conditionally.
-	if ( class_exists( 'WooCommerce' ) && ( is_woocommerce() || is_front_page() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) ) {
+	global $post;
+	if ( class_exists( 'WooCommerce' ) && ( has_shortcode( $post->post_content, 'products' ) ||  has_shortcode( $post->post_content, 'sale_products' ) || is_woocommerce() || is_front_page() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) ) {
 		wp_enqueue_style( 'ycb-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
 	}
 
@@ -298,7 +299,7 @@ wp_register_style( 'ycb', get_stylesheet_directory_uri() . '/assets/styles/min/s
 wp_enqueue_style( 'ycb' );
 
 //Load custom css
-wp_register_style( 'ycb-custom', get_stylesheet_directory_uri() . 'custom.css', array(), CHILD_THEME_VERSION );
+wp_register_style( 'ycb-custom', get_stylesheet_directory_uri() . '/custom.css', array(), CHILD_THEME_VERSION );
 wp_enqueue_style( 'ycb-custom' );
 
 add_filter( 'genesis_seo_title', 'custom_header_inline_logo', 10, 3 );

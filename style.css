@@ -453,7 +453,7 @@ button.accent,
 input[type=button].accent,
 input[type=reset].accent,
 input[type=submit].accent {
-	background-color: #fb2056
+	background-color: #00a5d7
 }
 .button.small,
 button.small,
@@ -886,8 +886,8 @@ img.alignright {
 	color: #fff
 }
 .custom-logo {
-	height: 50px;
-	height: 5rem
+	height: 25px;
+	height: 2.5rem
 }
 .header-widget-area {
 	margin-right: 10vw;
@@ -913,6 +913,13 @@ img.alignright {
 .header-widget-area .simple-social-icons ul li a:focus,
 .header-widget-area .simple-social-icons ul li a:hover {
 	background-color: transparent!important
+}
+.header-widget-area .widget .textwidget {
+	font-size: 14px;
+	color: #00a5d7;
+	font-family: "Roboto Condensed",Helvetica,Arial,sans-serif;
+	font-weight: 500;
+	margin-right: 25px
 }
 .wp-custom-header {
 	position: absolute;
@@ -1415,7 +1422,7 @@ p.entry-meta {
 }
 .archive-pagination .active a,
 .archive-pagination a:hover {
-	background-color: #fb2056;
+	background-color: #00a5d7;
 	color: #fff;
 	box-shadow: 0 1rem 1rem -.5rem rgba(20,30,40,.15)
 }
@@ -1963,6 +1970,47 @@ div.lSSlideOuter ul.testimonials-list li {
 .bp-contact-card .bp-opening-hours-brief:before {
 	content: "\f18f"
 }
+.products .iconic-was-swatches {
+	margin-bottom: 0!important
+}
+.products .iconic-was-swatches li {
+	margin-right: 5px
+}
+.woocommerce .summary ul.iconic-was-swatches {
+	margin: 0
+}
+.iconic-was-swatches--image-swatch .iconic-was-swatch__graphic {
+	width: 60px;
+	height: 60px
+}
+.iconic-was-swatches--loop .iconic-was-swatch__graphic--image {
+	width: 50px!important;
+	height: 50px!important
+}
+.iconic-was-swatches--loop .iconic-was-swatch--colour-swatch .iconic-was-swatch__graphic {
+	width: 25px!important;
+	height: 25px!important
+}
+.iconic-was-swatches--text-swatch .iconic-was-swatch,
+a.iconic-was-swatch {
+	border: 1px solid transparent
+}
+.iconic-was-swatches--text-swatch .iconic-was-swatch:hover,
+a.iconic-was-swatch:hover {
+	border: 1px solid #e63946
+}
+.iconic-was-swatches--loop .iconic-was-swatch--text-swatch {
+	font-size: 14px;
+	border: 1px solid #ccc!important;
+	padding: 5px 5px;
+	border-radius: 0
+}
+.woocommerce .cart-collaterals .cross-sells .iconic-was-swatches li {
+	display: inline-block;
+	margin: 0 8px 8px 0;
+	padding: 0;
+	width: auto!important
+}
 .home .site-inner {
 	padding: 0
 }
@@ -2050,7 +2098,7 @@ div.lSSlideOuter ul.testimonials-list li {
 	width: 100px;
 	width: 10rem;
 	border: 0;
-	background-color: #fb2056
+	background-color: #00a5d7
 }
 .front-page-3 .widget_custom_html:first-of-type p {
 	color: #567
@@ -2293,7 +2341,7 @@ div.lSSlideOuter ul.testimonials-list li {
 	width: 100px;
 	width: 10rem;
 	border: 0;
-	background-color: #fb2056
+	background-color: #00a5d7
 }
 .front-page-5 .widget_custom_html:first-of-type p {
 	color: #567
@@ -2490,7 +2538,7 @@ div.lSSlideOuter ul.testimonials-list li {
 	display: block
 }
 .portfolio .filter a.active {
-	color: #fb2056
+	color: #00a5d7
 }
 .portfolio-item {
 	width: 100%;
@@ -2715,7 +2763,7 @@ div.lSSlideOuter ul.testimonials-list li {
 }
 .pricing-table .featured .button,
 .pricing-table .featured button {
-	background-color: #fb2056
+	background-color: #00a5d7
 }
 .pricing-table strong {
 	font-weight: 500;
@@ -3272,6 +3320,11 @@ div.lSSlideOuter ul.testimonials-list li {
 	}
 	.icons span {
 		width: 25%
+	}
+}
+@media only screen and (max-width:768px) {
+	.post-type-archive-product .iconic-was-swatches {
+		display: none
 	}
 }
 @media (max-width:768px) {

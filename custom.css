@@ -62,14 +62,14 @@
 }
 
 .site-header .widget-area {
-    margin-left: 20px!important;
-    display: -webkit-flex!important;
-    display: flex!important;
-    -webkit-flex: 1 1 auto;
-    flex: 1 1 60%;
-    -webkit-justify-content: space-between;
+    /* margin-left: 20px!important; */
+    /* display: -webkit-flex!important; */
+    /* display: flex!important; */
+    /* -webkit-flex: 1 1 auto; */
+    /* flex: 1 1 60%; */
+    /* -webkit-justify-content: space-between; */
     /* Safari */
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .header-widget-area .widget_product_search {

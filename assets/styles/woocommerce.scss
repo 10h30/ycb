@@ -203,18 +203,22 @@
                 font-size: 1.8rem;
                 position: relative;
                 margin-top: 1rem;
+                text-transform: uppercase;
             }
             .price {
                 display: block;
                 clear: both;
                 float: none;
                 background-color: $white;
-                color: $dark;
+                color: $lighter;
                 margin-bottom: 0;
+                font-size: 2.2rem;
+                font-weight: 300;
                 del,
                 ins {
                     display: inline;
                     margin-right: 0.5em;
+                    font-weight: 300;
                 }
             }
             span.onsale {

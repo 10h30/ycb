@@ -99,7 +99,7 @@
 }
 
 .custom-logo {
-    height: 5rem;
+    height: 2.5rem;
 }
 
 /* ## Header Right Widget Area
@@ -131,6 +131,14 @@
         a:focus {
             background-color: transparent !important;
         }
+    }
+    
+    .widget .textwidget {
+        font-size: 14px;
+        color: $accent;
+        font-family: $font-heading;
+        font-weight: $bolder;
+        margin-right: 25px;
     }
 }
 

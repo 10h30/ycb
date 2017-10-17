@@ -156,3 +156,61 @@ div.lSSlideOuter {
         }
     }
 }
+
+/* ## Iconic Woocommerce Swatch
+--------------------------------------------- */
+.products .iconic-was-swatches {
+    margin-bottom: 0!important;
+    li {
+        margin-right: 5px;
+    }
+}
+
+.woocommerce .summary ul.iconic-was-swatches {
+    margin:0;
+}
+
+.iconic-was-swatches--image-swatch .iconic-was-swatch__graphic {
+    width: 60px;
+    height: 60px;
+}
+
+.iconic-was-swatches--loop {
+    .iconic-was-swatch__graphic--image {
+        width: 50px!important;
+        height: 50px!important;
+    }
+    .iconic-was-swatch--colour-swatch .iconic-was-swatch__graphic {
+    width: 25px!important;
+    height: 25px!important;
+    }
+}
+
+
+a.iconic-was-swatch, .iconic-was-swatches--text-swatch .iconic-was-swatch {
+    border: 1px solid transparent;
+}
+
+a.iconic-was-swatch:hover, .iconic-was-swatches--text-swatch .iconic-was-swatch:hover {
+    border: 1px solid #e63946;
+}
+
+.iconic-was-swatches--loop .iconic-was-swatch--text-swatch {
+    font-size: 14px;
+    border: 1px solid #ccc!important;
+    padding: 5px 5px;
+    border-radius: 0px;
+}
+
+.woocommerce .cart-collaterals .cross-sells .iconic-was-swatches li {
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 0;
+    width: auto!important;
+}
+
+@media only screen and (max-width: 768px) {
+    .post-type-archive-product .iconic-was-swatches {
+        display: none;
+    }
+}
