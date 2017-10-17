@@ -12,5 +12,13 @@
 
 get_template_part( 'template', 'full' );
 
+<<<<<<< HEAD
 // Run Genesis.
 //genesis();
+=======
+// Remove default page header
+remove_action( 'genesis_after_header', 'business_page_header_open', 20 );
+remove_action( 'genesis_after_header', 'business_page_header_title', 24 );
+remove_action( 'genesis_after_header', 'business_page_header_close', 28 );
+
+>>>>>>> 6e8e13ab0f509de954040e3d450f722666e4e1e0
