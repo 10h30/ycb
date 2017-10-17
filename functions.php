@@ -257,17 +257,17 @@ function business_scripts_styles() {
 
 	// Enqueue WooCommerce styles conditionally.
 	if ( class_exists( 'WooCommerce' ) && ( is_woocommerce() || is_front_page() || is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) ) {
-		wp_enqueue_style( 'business-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
+		wp_enqueue_style( 'ycb-woocommerce', get_stylesheet_directory_uri() . '/assets/styles/min/woocommerce.min.css', array(), CHILD_THEME_VERSION );
 	}
 
 	// Enqueue theme scripts.
 	wp_enqueue_script( 'ycb', get_stylesheet_directory_uri() . '/assets/scripts/min/ycb.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Enqueue responsive menu script.
-	wp_enqueue_script( 'business-menu', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+	wp_enqueue_script( 'ycb-menu', get_stylesheet_directory_uri() . '/assets/scripts/min/menus.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 	// Localize responsive menus script.
-	wp_localize_script( 'business-menu', 'genesis_responsive_menu', array(
+	wp_localize_script( 'ycb-menu', 'genesis_responsive_menu', array(
 		'mainMenu'         => __( 'Menu', 'ycb' ),
 		'subMenu'          => __( 'Menu', 'ycb' ),
 		'menuIconClass'    => null,
@@ -303,6 +303,7 @@ function ycb_do_header() {
 	
 	if( function_exists( 'ubermenu' ) ) {
 		ubermenu( 'main' , array( 'menu' => 16 ) );
+		wp_enqueue_style( 'ycb-ubermenu', get_stylesheet_directory_uri() . '/ubermenu.css', array(), CHILD_THEME_VERSION );
 	}
 
 	genesis_markup( array(
